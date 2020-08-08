@@ -1,21 +1,21 @@
 const createPerson = (name, age) => {
-  // your code here
+// your code here
 };
 
 const getName = object => {
-  // your code here
+  return object.name;
 };
 
 const getProperty = (property, object) => {
-  // your code here
+  return object.age;
 };
 
 const hasProperty = (property, object) => {
-  // your code here
+  return object.hasOwnProperty('age');
 };
 
 const isOver65 = person => {
-  // your code here
+  return object.age>65;
 };
 
 const getAges = people => {

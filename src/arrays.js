@@ -1,49 +1,74 @@
 const getNthElement = (index, array) => {
-return array.find(index, array).getNthElement;
+//   return array.find((value, i) =>{
+// if (i === index){
+//   return value
+// }
+//   });
+
+  // return array[index];
+
+  const arrLength = array.length;
+  let positionToLookFor;
+  if (index + 1 > arrLength) {
+    positionToLookFor = index - arrLength;
+  } else {
+    positionToLookFor = index;
+  }
+  return array[positionToLookFor];
+
 };
 
 const arrayToCSVString = array => {
-  // your code here
+ // console.log(array.join());
+ return array.join();
+ 
 };
 
 const csvStringToArray = string => {
-  // your code here
+//  console.log(string.split(","));
+ return string.split(",");
 };
 
 const addToArray = (element, array) => {
-  // your code here
+//console.log(array);
+array.push(element);
+//console.log(array);
+
 };
 
 const addToArray2 = (element, array) => {
-  // your code here
+const newArray = array.concat(element);
+
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+ array.splice(2, 1);
 };
 
 const numbersToStrings = numbers => {
-  // your code here
+  return numbers.toString().split(",");
 };
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+ // return strings.toUpperCase();
+return strings = String.prototype.toUpperCase.apply(strings).split(",");
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  return strings.reverse();
 };
 
 const onlyEven = numbers => {
-  // your code here
+    return numbers.filter(function(val){return val%2===0})
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  newArray = [...array];
+  return newArray.splice(2, 1);
 };
 
 const elementsStartingWithAVowel = strings => {
-  // your code here
+  return strings.filter('[aeiouAEIOU]');
 };
 
 const removeSpaces = string => {
@@ -51,7 +76,10 @@ const removeSpaces = string => {
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  return numbers.reduce(
+    ( accumulator, currentValue ) => accumulator + currentValue,
+    0
+  )
 };
 
 const sortByLastLetter = strings => {

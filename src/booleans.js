@@ -102,7 +102,7 @@ const startsWith = (char, string) => {
 };
 
 const containsVowels = string => {
-  return (string.match('[aeiouAEIOU]'))!=null;
+  return (string.match('[aeiouAEIOU]'))!==null;
 
 };
 
