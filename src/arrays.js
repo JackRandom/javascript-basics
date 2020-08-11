@@ -1,13 +1,5 @@
 const getNthElement = (index, array) => {
-//   return array.find((value, i) =>{
-// if (i === index){
-//   return value
-// }
-//   });
-
-  // return array[index];
-
-  const arrLength = array.length;
+ const arrLength = array.length;
   let positionToLookFor;
   if (index + 1 > arrLength) {
     positionToLookFor = index - arrLength;
@@ -37,12 +29,11 @@ array.push(element);
 };
 
 const addToArray2 = (element, array) => {
-const newArray = array.concat(element);
-
+ return array.concat(element);
 };
 
 const removeNthElement = (index, array) => {
- array.splice(2, 1);
+ array.splice(index, 1);
 };
 
 const numbersToStrings = numbers => {
@@ -55,7 +46,7 @@ return strings = String.prototype.toUpperCase.apply(strings).split(",");
 };
 
 const reverseWordsInArray = strings => {
-  return strings.reverse();
+  return strings.map(word => word.split('').reverse().join(''));
 };
 
 const onlyEven = numbers => {
@@ -63,27 +54,36 @@ const onlyEven = numbers => {
 };
 
 const removeNthElement2 = (index, array) => {
-  newArray = [...array];
-  return newArray.splice(2, 1);
+  // newArray = [...array];
+  // return newArray.splice(2, 1);
+  return array.filter((_, itemIndex) => itemIndex !== index);
 };
 
 const elementsStartingWithAVowel = strings => {
-  return strings.filter('[aeiouAEIOU]');
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+  return strings.filter(word => {
+    const firstLetter = word[0].toLowerCase();
+    
+    return vowels.includes(firstLetter);
+  });
 };
 
 const removeSpaces = string => {
-  // your code here
+  return string.split(' ').join('');
 };
 
 const sumNumbers = numbers => {
-  return numbers.reduce(
-    ( accumulator, currentValue ) => accumulator + currentValue,
-    0
-  )
+return numbers.reduce((accumulator, currentValue) => 
+
+ accumulator + currentValue,
+    0);
 };
 
 const sortByLastLetter = strings => {
-  // your code here
+  const reverseString = (item) => item.split('').reverse().join('');
+  
+  return strings.map(reverseString).sort().map(reverseString);
 };
 
 module.exports = {
